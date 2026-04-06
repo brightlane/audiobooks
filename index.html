@@ -3,130 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unlimited Audiobooks Free Trial | Listen Anywhere</title>
-<meta name="description" content="Start your free audiobook trial. Access thousands of books instantly. Limited-time offer.">
+<title>Free Audiobooks Trial – Listen Anywhere Anytime</title>
+<meta name="description" content="Start your free audiobook trial. Thousands of titles available instantly. Listen anywhere anytime. Limited-time offer.">
+<meta name="keywords" content="free audiobooks, listen to audiobooks, audiobook app, audiobook free trial">
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Free Audiobooks Trial – Listen Anywhere" />
+<meta property="og:description" content="Start your free audiobook trial. Thousands of titles available instantly. Limited-time offer." />
+<meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Audiobooks+Free+Trial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Audiobooks Trial – Listen Anywhere">
+<meta name="twitter:description" content="Start your free audiobook trial. Thousands of titles available instantly. Limited-time offer.">
+<meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Audiobooks+Free+Trial">
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- Styles -->
 <style>
-/* ===== General Styles ===== */
-body, html { margin:0; padding:0; font-family:'Roboto',sans-serif; scroll-behavior:smooth; background:#f9f9f9; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
-
-/* ===== Navbar ===== */
-header { position:sticky; top:0; background:#111; color:white; display:flex; justify-content:space-between; padding:15px 30px; z-index:1000; }
-header .logo { font-weight:bold; font-size:1.5rem; }
-nav ul { display:flex; gap:20px; list-style:none; margin:0; padding:0; }
-nav ul li a { color:white; font-weight:bold; }
-.hamburger { display:none; font-size:2rem; cursor:pointer; }
-
-/* ===== HERO ===== */
-#hero {
- height:100vh;
- position:relative;
- display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white;
- overflow:hidden;
-}
-#hero img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform 0.3s ease; }
-#hero::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:-1; }
-
-#hero h1 { font-size:3rem; margin-bottom:10px; animation:fadeInDown 1s ease forwards; opacity:0; }
-#hero p { font-size:1.3rem; margin-bottom:20px; animation:fadeInUp 1s ease forwards; opacity:0; }
-#hero .cta { animation:fadeIn 1.5s ease forwards; opacity:0; }
-
-/* ===== Sections ===== */
-.section { padding:60px 20px; text-align:center; opacity:0; transform:translateY(30px); transition:all 1s ease; }
-.section.visible { opacity:1; transform:translateY(0); }
-.light { background:#f4f4f4; }
-.dark { background:#111; color:white; }
-
-/* ===== Cards ===== */
-.card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px; }
-.card { background:white; padding:25px; width:280px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); font-weight:500; transition:transform 0.3s; }
-.card:hover { transform:translateY(-10px) scale(1.05); }
-
-/* ===== Testimonials ===== */
-.testimonial-container { display:flex; overflow-x:auto; gap:20px; padding:20px 0; scroll-behavior:smooth; }
-.testimonial { min-width:280px; flex-shrink:0; background:white; padding:20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.05); font-style:italic; }
-
-/* ===== How it Works ===== */
-.steps-container { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:40px; }
-.step { background:white; padding:25px; border-radius:15px; width:250px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s; }
-.step img { width:80px; height:80px; margin-bottom:15px; }
-.step:hover { transform:translateY(-10px) scale(1.05); }
-
-/* ===== CTA ===== */
-.cta { background:#ff4d4d; color:white; padding:15px 40px; border-radius:50px; margin-top:20px; cursor:pointer; font-size:20px; font-weight:bold; transition:0.3s; display:inline-block; }
-.cta:hover { background:#e63b3b; transform:scale(1.1); }
-
-/* ===== Timer ===== */
-#timer { color:yellow; font-size:24px; margin-top:10px; }
-
-/* ===== Chat ===== */
-#chat-box { position:fixed; bottom:20px; right:20px; width:280px; background:white; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.2); padding:15px; font-size:14px; z-index:2000; }
-#chat-header { font-weight:bold; margin-bottom:10px; color:#ff4d4d; }
-#chat-msg { min-height:40px; }
-
-/* ===== Signup Popup ===== */
-#signup-popup { position:fixed; bottom:100px; left:20px; background:white; padding:15px 20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none; font-size:14px; z-index:2000; }
-
-/* ===== FAQ Accordion ===== */
-.accordion { max-width:700px; margin:20px auto; text-align:left; }
-.accordion-item { background:white; margin-bottom:10px; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-.accordion-header { padding:15px; cursor:pointer; font-weight:bold; }
-.accordion-body { padding:15px; display:none; border-top:1px solid #ddd; }
-
-/* ===== Floating Books ===== */
-.floating-book { position:absolute; width:40px; opacity:0.5; animation:float linear infinite; }
-@keyframes float { 0%{transform:translateY(0);} 50%{transform:translateY(-20px);} 100%{transform:translateY(0);} }
-
-/* ===== Animations ===== */
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
-@keyframes fadeInDown { from{opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);} }
-@keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
-
-/* ===== Responsive ===== */
-@media(max-width:768px){
-  .hamburger{display:block;}
-  nav ul{flex-direction:column; position:absolute; top:60px; right:-100%; background:#111; width:200px; transition:right 0.3s; border-radius:0 0 10px 10px;}
-  nav ul.show{right:0;}
-  nav ul li{margin:1rem 0;}
-  #hero img { object-position:center top; }
-  .testimonial-container{flex-wrap:nowrap; overflow-x:auto;}
-  .steps-container{flex-wrap:nowrap; overflow-x:auto;}
-}
+body, html {margin:0;padding:0;font-family:'Roboto',sans-serif;scroll-behavior:smooth;background:#f9f9f9;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+header{position:sticky;top:0;background:#111;color:white;display:flex;justify-content:space-between;padding:15px 30px;z-index:1000;}
+header .logo{font-weight:bold;font-size:1.5rem;}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
+nav ul li a{color:white;font-weight:bold;}
+.hamburger{display:none;font-size:2rem;cursor:pointer;}
+#hero{height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;overflow:hidden;}
+#hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 0.3s ease;}
+#hero::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:-1;}
+#hero h1{font-size:3rem;margin-bottom:10px;animation:fadeInDown 1s ease forwards;opacity:0;}
+#hero p{font-size:1.3rem;margin-bottom:20px;animation:fadeInUp 1s ease forwards;opacity:0;}
+#hero .cta{animation:fadeIn 1.5s ease forwards;opacity:0;}
+.section{padding:60px 20px;text-align:center;opacity:0;transform:translateY(30px);transition:all 1s ease;}
+.section.visible{opacity:1;transform:translateY(0);}
+.light{background:#f4f4f4;}
+.dark{background:#111;color:white;}
+.card-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:40px;}
+.card{background:white;padding:25px;width:280px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-weight:500;transition:transform 0.3s;}
+.card:hover{transform:translateY(-10px) scale(1.05);}
+.testimonial-container{display:flex;overflow-x:auto;gap:20px;padding:20px 0;scroll-behavior:smooth;}
+.testimonial{min-width:280px;flex-shrink:0;background:white;padding:20px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.05);font-style:italic;}
+.steps-container{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:40px;}
+.step{background:white;padding:25px;border-radius:15px;width:250px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;}
+.step img{width:80px;height:80px;margin-bottom:15px;}
+.step:hover{transform:translateY(-10px) scale(1.05);}
+.cta{background:#ff4d4d;color:white;padding:15px 40px;border-radius:50px;margin-top:20px;cursor:pointer;font-size:20px;font-weight:bold;transition:0.3s;display:inline-block;}
+.cta:hover{background:#e63b3b;transform:scale(1.1);}
+#timer{color:yellow;font-size:24px;margin-top:10px;}
+#chat-box{position:fixed;bottom:20px;right:20px;width:280px;background:white;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.2);padding:15px;font-size:14px;z-index:2000;}
+#chat-header{font-weight:bold;margin-bottom:10px;color:#ff4d4d;}
+#chat-msg{min-height:40px;}
+#signup-popup{position:fixed;bottom:100px;left:20px;background:white;padding:15px 20px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.2);display:none;font-size:14px;z-index:2000;}
+.accordion{max-width:700px;margin:20px auto;text-align:left;}
+.accordion-item{background:white;margin-bottom:10px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+.accordion-header{padding:15px;cursor:pointer;font-weight:bold;}
+.accordion-body{padding:15px;display:none;border-top:1px solid #ddd;}
+.floating-book{position:absolute;width:40px;opacity:0.5;animation:float linear infinite;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0} to{opacity:1}}
+@keyframes fadeInDown{from{opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);}}
+@keyframes fadeInUp{from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+@media(max-width:768px){.hamburger{display:block;} nav ul{flex-direction:column; position:absolute; top:60px; right:-100%; background:#111; width:200px; transition:right 0.3s; border-radius:0 0 10px 10px;} nav ul.show{right:0;} nav ul li{margin:1rem 0;} #hero img { object-position:center top;} .testimonial-container{flex-wrap:nowrap; overflow-x:auto;} .steps-container{flex-wrap:nowrap; overflow-x:auto;}}
 </style>
+
+<!-- Structured Data JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Audiobooks Free Trial",
+  "image": "https://via.placeholder.com/1200x630.png?text=Audiobooks+Free+Trial",
+  "description": "Start your free audiobook trial. Thousands of titles available instantly. Listen anywhere anytime.",
+  "brand": {"@type":"Organization","name":"Audiobooks Funnel"},
+  "offers": {
+    "@type": "Offer",
+    "url": "https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885",
+    "price": "0.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Audiobooks</div>
-  <div class="hamburger" id="hamburger">&#9776;</div>
-  <nav>
-    <ul id="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#benefits">Benefits</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how">How it Works</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#cta-final">Sign Up</a></li>
-    </ul>
-  </nav>
+<div class="logo">Audiobooks</div>
+<div class="hamburger" id="hamburger">&#9776;</div>
+<nav>
+<ul id="nav-links">
+<li><a href="#hero">Home</a></li>
+<li><a href="#benefits">Benefits</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#cta-final">Sign Up</a></li>
+</ul>
+</nav>
 </header>
 
 <!-- HERO -->
 <section id="hero">
-  <img src="https://via.placeholder.com/1920x1080.png?text=Audiobooks+Desktop" alt="Audiobooks" id="hero-img">
-  <h1 id="headline">Listen to Thousands of Audiobooks Free</h1>
-  <p id="geo-text">Loading location...</p>
-  <div id="timer">Offer ends in: 10:00</div>
-  <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" target="_blank" class="cta" id="cta-btn">Start Free Trial</a>
+<img src="https://via.placeholder.com/1920x1080.png?text=Audiobooks+Desktop" alt="Listen to free audiobooks on any device" id="hero-img">
+<h1 id="headline">Listen to Thousands of Free Audiobooks Instantly</h1>
+<p id="geo-text">Loading location...</p>
+<div id="timer">Offer ends in: 10:00</div>
+<a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" target="_blank" class="cta" id="cta-btn">Start Free Trial</a>
 </section>
 
 <!-- BENEFITS -->
 <section id="benefits" class="section light">
-<h2>Why Audiobooks?</h2>
+<h2>Why Choose Audiobooks?</h2>
 <div class="card-container">
 <div class="card">📚 100,000+ titles instantly available</div>
 <div class="card">🚗 Learn while driving, walking, or working</div>
@@ -138,7 +129,7 @@ nav ul li a { color:white; font-weight:bold; }
 
 <!-- FEATURES -->
 <section id="features" class="section">
-<h2>Key Features</h2>
+<h2>Key Features of the App</h2>
 <div class="card-container">
 <div class="card">Offline Mode: Listen without internet</div>
 <div class="card">Bookmarks & Notes</div>
@@ -149,11 +140,11 @@ nav ul li a { color:white; font-weight:bold; }
 
 <!-- HOW IT WORKS -->
 <section id="how" class="section light">
-<h2>How it Works</h2>
+<h2>How It Works</h2>
 <div class="steps-container">
-<div class="step"><img src="https://via.placeholder.com/80.png?text=1"><h3>Sign Up</h3><p>Start your free trial instantly.</p></div>
-<div class="step"><img src="https://via.placeholder.com/80.png?text=2"><h3>Choose a Book</h3><p>Select from thousands of titles.</p></div>
-<div class="step"><img src="https://via.placeholder.com/80.png?text=3"><h3>Listen & Enjoy</h3><p>Stream or download on any device.</p></div>
+<div class="step"><img src="https://via.placeholder.com/80.png?text=1" alt="Step 1 Sign Up"><h3>Sign Up</h3><p>Start your free trial instantly.</p></div>
+<div class="step"><img src="https://via.placeholder.com/80.png?text=2" alt="Step 2 Choose Book"><h3>Choose a Book</h3><p>Select from thousands of titles.</p></div>
+<div class="step"><img src="https://via.placeholder.com/80.png?text=3" alt="Step 3 Listen"><h3>Listen & Enjoy</h3><p>Stream or download on any device.</p></div>
 </div>
 </section>
 
@@ -173,18 +164,9 @@ nav ul li a { color:white; font-weight:bold; }
 <section id="faq" class="section light">
 <h2>Frequently Asked Questions</h2>
 <div class="accordion">
-<div class="accordion-item">
-<div class="accordion-header">Is it really free?</div>
-<div class="accordion-body">Yes, free trial available.</div>
-</div>
-<div class="accordion-item">
-<div class="accordion-header">Can I cancel anytime?</div>
-<div class="accordion-body">Yes, no commitment.</div>
-</div>
-<div class="accordion-item">
-<div class="accordion-header">Which devices work?</div>
-<div class="accordion-body">Phone, tablet, desktop.</div>
-</div>
+<div class="accordion-item"><div class="accordion-header">Is it really free?</div><div class="accordion-body">Yes, free trial available.</div></div>
+<div class="accordion-item"><div class="accordion-header">Can I cancel anytime?</div><div class="accordion-body">Yes, no commitment.</div></div>
+<div class="accordion-item"><div class="accordion-header">Which devices work?</div><div class="accordion-body">Phone, tablet, desktop.</div></div>
 </div>
 <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" target="_blank" class="cta">Claim Free Trial</a>
 </section>
@@ -205,34 +187,36 @@ nav ul li a { color:white; font-weight:bold; }
 <!-- SIGNUP POPUP -->
 <div id="signup-popup"></div>
 
+<!-- FOOTER -->
 <footer>
 <p>© 2026 Audiobooks Funnel | <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" target="_blank" style="color:#ff4d4d;">Start Free Trial</a></p>
 </footer>
 
+<!-- Scripts -->
 <script>
-// ===== NAV =====
+// NAV
 const hamburger=document.getElementById("hamburger");
 const navLinks=document.getElementById("nav-links");
 hamburger.addEventListener("click",()=>{navLinks.classList.toggle("show");});
 
-// ===== GEO PERSONALIZATION =====
+// GEO PERSONALIZATION
 fetch("https://ipapi.co/json/").then(res=>res.json()).then(data=>{
  document.getElementById("geo-text").innerText="🔥 Special offer in "+data.city;
 });
 
-// ===== A/B TESTING =====
+// A/B TESTING
 let variant=Math.random()<0.5?"A":"B";
 if(variant==="B"){document.getElementById("headline").innerText="🎧 Finish More Books Without Reading";document.getElementById("cta-btn").innerText="Unlock Free Audiobooks";}
 
-// ===== TIMER =====
+// TIMER
 let time=600;let timer=document.getElementById("timer");
 setInterval(()=>{let m=Math.floor(time/60);let s=time%60;timer.innerText="Offer ends in: "+m+":"+(s<10?"0":"")+s;time--;},1000);
 
-// ===== FAKE CHAT =====
+// FAKE CHAT
 let messages=["Most users start with the free trial 👍","You can cancel anytime.","People love using this while driving 🚗","Want the link? Click the button above 👆"];
 let i=0;setInterval(()=>{document.getElementById("chat-msg").innerText=messages[i];i=(i+1)%messages.length;},4000);
 
-// ===== SECTION FADE-IN ON SCROLL =====
+// SECTION SCROLL FADE
 const sections=document.querySelectorAll(".section");
 window.addEventListener("scroll",()=>{
  sections.forEach(section=>{
@@ -243,7 +227,7 @@ window.addEventListener("scroll",()=>{
  document.getElementById("hero-img").style.transform=`scale(${1+scrollTop/2000}) translateY(${scrollTop/4}px)`;
 });
 
-// ===== SIGNUP POPUP =====
+// SIGNUP POPUP
 const popup=document.getElementById("signup-popup");
 const users=["John from NY signed up","Emma from LA joined","Liam from TX claimed free trial","Olivia from FL joined"];
 setInterval(()=>{
@@ -251,7 +235,7 @@ setInterval(()=>{
  setTimeout(()=>{popup.style.display="none";},4000);
 },7000);
 
-// ===== MOBILE HERO IMAGE =====
+// MOBILE HERO IMAGE
 function updateHeroImage(){
  if(window.innerWidth<768){
    document.getElementById("hero-img").src="https://via.placeholder.com/768x1024.png?text=Audiobooks+Mobile";
@@ -262,7 +246,7 @@ function updateHeroImage(){
 window.addEventListener("resize",updateHeroImage);
 updateHeroImage();
 
-// ===== FAQ ACCORDION =====
+// FAQ ACCORDION
 document.querySelectorAll(".accordion-header").forEach(header=>{
  header.addEventListener("click",()=>{header.nextElementSibling.style.display=header.nextElementSibling.style.display==="block"?"none":"block";});
 });
