@@ -1,1 +1,154 @@
-rrfg
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listen to thousands of audiobooks anytime, anywhere. Start your free trial today!">
+    <meta name="keywords" content="audiobooks, books online, listen to books, audiobook subscription, learning, podcasts">
+    <meta property="og:title" content="Unlimited Audiobooks | Start Listening Today" />
+    <meta property="og:description" content="Join millions enjoying audiobooks on the go. Try it free now." />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Audiobooks" />
+    <title>Audiobooks | Listen Anytime, Anywhere</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        a { text-decoration: none; color: inherit; }
+        header { background: #111; color: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        nav ul { display: flex; list-style: none; gap: 2rem; margin: 0; }
+        nav a { color: white; font-weight: bold; }
+        .logo { font-weight: bold; font-size: 1.5rem; }
+        .hamburger { display: none; font-size: 2rem; cursor: pointer; }
+
+        #hero {
+            background: url('https://via.placeholder.com/1920x1080.png?text=Audiobooks+Experience') center/cover no-repeat;
+            height: 80vh;
+            display: flex; justify-content: center; align-items: center;
+            color: white; text-align: center;
+        }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+        .cta-button {
+            background: #ff6f61;
+            padding: 1rem 2rem;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: #e55b50; }
+
+        #services { padding: 4rem 1rem; background: #f9f9f9; text-align: center; }
+        .services-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+
+        #about { padding: 4rem 1rem; text-align: center; }
+
+        #cta { background: #111; color: white; text-align: center; padding: 4rem 1rem; }
+
+        footer { background: #222; color: white; text-align: center; padding: 2rem 1rem; }
+        footer a { color: #ff6f61; }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; color: white; }
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: -100%;
+                background: #111;
+                width: 200px;
+                text-align: center;
+                transition: right 0.3s ease;
+                padding: 1rem 0;
+                border-radius: 0 0 10px 10px;
+            }
+            nav ul.show { right: 0; }
+            nav ul li { margin: 1rem 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">AudioBooks+</div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Benefits</a></li>
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#cta">Start Free</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="hero">
+    <div class="hero-content">
+        <h1>Unlock Thousands of Audiobooks Instantly</h1>
+        <p>Listen anywhere, anytime — while driving, working, or relaxing.</p>
+        <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta-button">Start Free Trial</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Why Choose Audiobooks?</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <h3>Massive Library</h3>
+            <p>Access thousands of bestsellers, classics, and new releases instantly.</p>
+        </div>
+        <div class="service-card">
+            <h3>Listen On The Go</h3>
+            <p>Perfect for commuting, workouts, or multitasking throughout your day.</p>
+        </div>
+        <div class="service-card">
+            <h3>Learn Faster</h3>
+            <p>Absorb knowledge and stories without needing to sit down and read.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>Why Audiobooks Work</h2>
+    <p>Millions of people are switching to audiobooks to save time and stay productive. Whether you want to learn new skills, enjoy stories, or stay informed, audiobooks make it effortless.</p>
+</section>
+
+<section id="cta">
+    <h2>Start Listening Today</h2>
+    <p>Click below to unlock your free trial and explore unlimited audio content.</p>
+    <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta-button">Get Instant Access</a>
+</section>
+
+<footer>
+    <p>&copy; 2026 AudioBooks+ | <span id="currentDate"></span></p>
+    <p><a href="#hero">Back to Top</a></p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => { navLinks.classList.toggle("show"); });
+</script>
+
+</body>
+</html>
