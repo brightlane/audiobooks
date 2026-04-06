@@ -1,153 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Listen to thousands of audiobooks anytime, anywhere. Start your free trial today!">
-    <meta name="keywords" content="audiobooks, books online, listen to books, audiobook subscription, learning, podcasts">
-    <meta property="og:title" content="Unlimited Audiobooks | Start Listening Today" />
-    <meta property="og:description" content="Join millions enjoying audiobooks on the go. Try it free now." />
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Audiobooks" />
-    <title>Audiobooks | Listen Anytime, Anywhere</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-        a { text-decoration: none; color: inherit; }
-        header { background: #111; color: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        nav ul { display: flex; list-style: none; gap: 2rem; margin: 0; }
-        nav a { color: white; font-weight: bold; }
-        .logo { font-weight: bold; font-size: 1.5rem; }
-        .hamburger { display: none; font-size: 2rem; cursor: pointer; }
+<title>Unlimited Audiobooks Free Trial | Listen Anywhere</title>
+<meta name="description" content="Start your free audiobook trial. Access thousands of books instantly. Limited-time offer.">
+<meta name="keywords" content="audiobooks, free audiobook trial, listen to books, audiobook app">
 
-        #hero {
-            background: url('https://via.placeholder.com/1920x1080.png?text=Audiobooks+Experience') center/cover no-repeat;
-            height: 80vh;
-            display: flex; justify-content: center; align-items: center;
-            color: white; text-align: center;
-        }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
 
-        .cta-button {
-            background: #ff6f61;
-            padding: 1rem 2rem;
-            color: white;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .cta-button:hover { background: #e55b50; }
+<style>
+body { margin:0; font-family:Arial; line-height:1.6; }
 
-        #services { padding: 4rem 1rem; background: #f9f9f9; text-align: center; }
-        .services-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .service-card:hover { transform: translateY(-10px); }
+/* Sections */
+.section { padding:60px 20px; text-align:center; }
+.dark { background:#111; color:white; }
+.light { background:#f4f4f4; }
 
-        #about { padding: 4rem 1rem; text-align: center; }
+/* Hero */
+#hero {
+ background:url('https://via.placeholder.com/1920x1080.png?text=Audiobooks') center/cover;
+ color:white;
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+}
 
-        #cta { background: #111; color: white; text-align: center; padding: 4rem 1rem; }
+/* CTA */
+.cta {
+ background:#ff4d4d;
+ color:white;
+ padding:15px 30px;
+ font-size:20px;
+ border-radius:5px;
+ display:inline-block;
+ margin-top:20px;
+ cursor:pointer;
+}
 
-        footer { background: #222; color: white; text-align: center; padding: 2rem 1rem; }
-        footer a { color: #ff6f61; }
+/* Timer */
+#timer { font-size:28px; color:yellow; }
 
-        @media (max-width: 768px) {
-            .hamburger { display: block; color: white; }
-            nav ul {
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: -100%;
-                background: #111;
-                width: 200px;
-                text-align: center;
-                transition: right 0.3s ease;
-                padding: 1rem 0;
-                border-radius: 0 0 10px 10px;
-            }
-            nav ul.show { right: 0; }
-            nav ul li { margin: 1rem 0; }
-        }
-    </style>
+/* Cards */
+.card-container {
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+}
+.card {
+ background:white;
+ padding:20px;
+ width:280px;
+ border-radius:10px;
+ box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Testimonials */
+.testimonial {
+ max-width:600px;
+ margin:20px auto;
+ font-style:italic;
+}
+
+/* FAQ */
+.faq { max-width:700px; margin:auto; text-align:left; }
+
+/* Hidden sections */
+.hidden { display:none; }
+
+input { padding:10px; width:250px; margin:10px; }
+</style>
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <div class="logo">AudioBooks+</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul id="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Benefits</a></li>
-            <li><a href="#about">Why Us</a></li>
-            <li><a href="#cta">Start Free</a></li>
-        </ul>
-    </nav>
-</header>
-
+<!-- HERO -->
 <section id="hero">
-    <div class="hero-content">
-        <h1>Unlock Thousands of Audiobooks Instantly</h1>
-        <p>Listen anywhere, anytime — while driving, working, or relaxing.</p>
-        <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta-button">Start Free Trial</a>
-    </div>
+<h1>🎧 Listen to Thousands of Audiobooks FREE</h1>
+<p>Turn your commute into learning time</p>
+<div id="timer">Offer ends in: 10:00</div>
+<div class="cta" onclick="showLead()">Start Free Trial</div>
 </section>
 
-<section id="services">
-    <h2>Why Choose Audiobooks?</h2>
-    <div class="services-container">
-        <div class="service-card">
-            <h3>Massive Library</h3>
-            <p>Access thousands of bestsellers, classics, and new releases instantly.</p>
-        </div>
-        <div class="service-card">
-            <h3>Listen On The Go</h3>
-            <p>Perfect for commuting, workouts, or multitasking throughout your day.</p>
-        </div>
-        <div class="service-card">
-            <h3>Learn Faster</h3>
-            <p>Absorb knowledge and stories without needing to sit down and read.</p>
-        </div>
-    </div>
+<!-- BENEFITS -->
+<section class="section light">
+<h2>Why Audiobooks?</h2>
+<div class="card-container">
+<div class="card">📚 100,000+ titles available instantly</div>
+<div class="card">🚗 Learn while driving or working</div>
+<div class="card">⚡ Finish more books in less time</div>
+</div>
+<div class="cta" onclick="showLead()">Get Started</div>
 </section>
 
-<section id="about">
-    <h2>Why Audiobooks Work</h2>
-    <p>Millions of people are switching to audiobooks to save time and stay productive. Whether you want to learn new skills, enjoy stories, or stay informed, audiobooks make it effortless.</p>
+<!-- SOCIAL PROOF -->
+<section class="section">
+<h2>Trusted by Millions</h2>
+<p>Join thousands of users improving their lives through audiobooks</p>
+
+<div class="testimonial">"I finished 12 books this month just while commuting!"</div>
+<div class="testimonial">"Way easier than sitting down to read."</div>
+<div class="testimonial">"Game changer for productivity."</div>
+
+<div class="cta" onclick="showLead()">Try It Free</div>
 </section>
 
-<section id="cta">
-    <h2>Start Listening Today</h2>
-    <p>Click below to unlock your free trial and explore unlimited audio content.</p>
-    <a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta-button">Get Instant Access</a>
+<!-- LEAD CAPTURE -->
+<section id="lead" class="section light hidden">
+<h2>Unlock Your Free Trial</h2>
+<p>Enter your email to continue</p>
+
+<form onsubmit="showReview(); return false;">
+<input type="email" required placeholder="Enter your email">
+<br>
+<button class="cta">Continue</button>
+</form>
 </section>
 
-<footer>
-    <p>&copy; 2026 AudioBooks+ | <span id="currentDate"></span></p>
-    <p><a href="#hero">Back to Top</a></p>
+<!-- REVIEW -->
+<section id="review" class="section hidden">
+<h1>Is This Worth It?</h1>
+
+<p>We tested it for 7 days. Here's what we found:</p>
+
+<h3>✅ Pros:</h3>
+<p>Massive library, super convenient, great for multitasking</p>
+
+<h3>❌ Cons:</h3>
+<p>Paid after trial (cancel anytime)</p>
+
+<h2>🎧 Verdict: Highly Recommended</h2>
+
+<a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta">
+Start Free Trial
+</a>
+</section>
+
+<!-- FAQ -->
+<section class="section light">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+<p><strong>Is it really free?</strong><br>Yes, you get a free trial.</p>
+
+<p><strong>Can I cancel anytime?</strong><br>Yes, no commitment.</p>
+
+<p><strong>What devices work?</strong><br>Phone, tablet, and desktop.</p>
+</div>
+
+<div class="cta" onclick="showLead()">Start Listening</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section dark">
+<h2>Start Your Free Audiobook Journey</h2>
+<p>Limited-time access — don't miss out</p>
+<div class="cta" onclick="showLead()">Claim Free Trial</div>
+</section>
+
+<footer class="section dark">
+<p>© 2026 Audiobooks Funnel</p>
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
-    });
+// NAVIGATION
+function showLead() {
+ document.getElementById('lead').classList.remove('hidden');
+ document.getElementById('lead').scrollIntoView({behavior:'smooth'});
+}
 
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-    hamburger.addEventListener("click", () => { navLinks.classList.toggle("show"); });
+function showReview() {
+ document.getElementById('review').classList.remove('hidden');
+ document.getElementById('review').scrollIntoView({behavior:'smooth'});
+}
+
+// TIMER
+let time = 600;
+let timer = document.getElementById("timer");
+
+setInterval(() => {
+ let m = Math.floor(time/60);
+ let s = time%60;
+ timer.innerHTML = "Offer ends in: " + m + ":" + (s<10?"0":"") + s;
+ time--;
+},1000);
 </script>
 
 </body>
