@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Audiobooks Trial | Listen Anywhere</title>
+<meta name="description" content="Start your audiobook free trial and listen anywhere. Limited-time offer.">
+
+<style>
+body { margin:0; font-family:Arial; }
+
+/* Hero */
+#hero {
+ height:100vh;
+ background:#111;
+ color:white;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+}
+
+/* CTA */
+.cta {
+ background:#ff4d4d;
+ color:white;
+ padding:15px 30px;
+ border-radius:5px;
+ margin-top:20px;
+ cursor:pointer;
+ font-size:20px;
+}
+
+/* Timer */
+#timer { color:yellow; font-size:28px; }
+
+/* Chat */
+#chat-box {
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ width:250px;
+ background:white;
+ border-radius:10px;
+ box-shadow:0 0 10px rgba(0,0,0,0.2);
+ padding:15px;
+ font-size:14px;
+}
+
+#chat-header { font-weight:bold; margin-bottom:10px; }
+
+/* Sections */
+.section { padding:50px; text-align:center; }
+.hidden { display:none; }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section id="hero">
+<h1 id="headline">Listen to Audiobooks Free</h1>
+<p id="geo-text">Loading location...</p>
+
+<div id="timer">Offer ends in: 10:00</div>
+
+<div class="cta" onclick="showLead()" id="cta-btn">Start Free Trial</div>
+</section>
+
+<!-- LEAD -->
+<section id="lead" class="section hidden">
+<h2>Enter Your Email</h2>
+<form onsubmit="showReview(); return false;">
+<input type="email" required placeholder="Email"><br>
+<button class="cta">Continue</button>
+</form>
+</section>
+
+<!-- REVIEW -->
+<section id="review" class="section hidden">
+<h2>Our Verdict</h2>
+<p>Huge library. Easy to use. Worth trying.</p>
+
+<a href="https://track.iafov.com/aff_c?offer_id=27665&aff_id=21885" class="cta">
+Start Listening
+</a>
+</section>
+
+<!-- CHAT ASSISTANT -->
+<div id="chat-box">
+<div id="chat-header">💬 Support</div>
+<div id="chat-msg">Hey! Need help choosing?</div>
+</div>
+
+<script>
+// ===== GEO PERSONALIZATION =====
+fetch("https://ipapi.co/json/")
+.then(res => res.json())
+.then(data => {
+ document.getElementById("geo-text").innerHTML =
+  "🔥 Special offer available in " + data.city;
+});
+
+// ===== A/B TESTING =====
+let variant = Math.random() < 0.5 ? "A" : "B";
+
+if (variant === "B") {
+ document.getElementById("headline").innerText =
+  "🎧 Finish More Books Without Reading";
+ document.getElementById("cta-btn").innerText =
+  "Unlock Free Audiobooks";
+}
+
+// ===== NAVIGATION =====
+function showLead() {
+ document.getElementById('lead').classList.remove('hidden');
+}
+
+function showReview() {
+ document.getElementById('review').classList.remove('hidden');
+}
+
+// ===== TIMER =====
+let time = 600;
+let timer = document.getElementById("timer");
+
+setInterval(() => {
+ let m = Math.floor(time/60);
+ let s = time%60;
+ timer.innerHTML = "Offer ends in: " + m + ":" + (s<10?"0":"") + s;
+ time--;
+},1000);
+
+// ===== FAKE CHAT =====
+let messages = [
+ "Most users start with the free trial 👍",
+ "You can cancel anytime.",
+ "People love using this while driving 🚗",
+ "Want the link? Click the button above 👆"
+];
+
+let i = 0;
+setInterval(() => {
+ document.getElementById("chat-msg").innerText = messages[i];
+ i = (i + 1) % messages.length;
+}, 4000);
+
+</script>
+
+</body>
+</html>
